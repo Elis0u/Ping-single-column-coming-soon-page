@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root{
+    --Blue: hsl(223, 87%, 63%);
+    --PaleBlue: hsl(223, 100%, 88%);
+    --LightRed: hsl(354, 100%, 66%);
+    --Gray: hsl(0, 0%, 59%);
+    --VeryDarkBlue: hsl(209, 33%, 12%);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    min-width: 375px;
+    max-width: 1440px;
+    text-align: center;
+    margin: auto;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 20px;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    header{
+        margin-top: 5rem;
+    }
+    section{
+        margin-top: 2rem;
+        h1{
+            color: var(--Gray);
+            font-weight: 300;
+            span{
+                color: var(--VeryDarkBlue);
+                font-weight: 700;
+            }
+        }
+        p{
+            color: var(--VeryDarkBlue);
+            font-weight: 300;
+            padding: 1rem 0;
+            font-size: .9rem;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            margin: 1rem auto;
+            width: 90%;
+            input{
+                padding: 0.7rem 1.5rem;
+                border-radius: 3rem;
+                border: 2px solid var(--PaleBlue);
+                color: var(--Gray);
+                width: 100%;
+            }
+            textarea:focus, input:focus{
+                outline: none;
+            }
+            .msgError{
+                color: var(--LightRed);
+                font-size: .6rem;
+                font-style: italic;
+                font-weight: 300;
+                text-align: center;
+                padding: 0.5rem 0;
+                display: none;
+            }
+            .error{
+                display: block;
+            }
+            .btn{
+                margin-top: 0.5rem;
+                padding: 0.7rem;
+                border-radius: 3rem;
+                border: none;
+                background-color: var(--Blue);
+                color: white;
+                font-weight: 300;
+            }
+            .btn:hover{
+                background-color: hsla(223, 87%, 63%, 0.8);
+                cursor: pointer;
+            }
+        }
+        img{
+            display: block;
+            max-width: 100%;
+            margin-top: 3rem;
+        }
+    }
+    footer{
+        text-align: center;
+        margin-top: 6rem;
+        margin-bottom: 2.5rem;
+        ul{
+            list-style-type: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            a{
+                display: inline-block;
+                width: 2.5rem;
+                height: 2.5rem;
+                line-height: 2.5rem;
+                text-align: center;
+                color: var(--Blue);
+                border-radius: 50%;
+                border: 1px solid var(--PaleBlue);
+                margin: 0 .5rem;
+                text-decoration: none;
+            }
+            a:hover{
+                background-color: var(--Blue);
+                color: white;
+            }
+        }
+        p{
+            margin-top: 1.5rem;
+            font-size: .7rem; 
+            color: var(--Gray);
+        }
+    }
+}
+
+@media screen and (min-width: 992px) {
+
+    .container{
+        width: 60%;
+        section{
+            form{
+                flex-direction: row;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 0.7rem;
+                .w-error{ 
+                    width: 100%;
+                    .msgError{
+                        text-align: start;
+                        margin-left: 1.5rem;
+                    }
+                }
+                .btn{
+                    margin-top: 0;
+                    padding-left: 0;
+                    padding-right: 0;
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+}
+
+
+// .attribution{ 
+//     font-size: 11px; 
+//     text-align: center; 
+//     position: fixed;
+//     bottom: 2%;
+
+//     a{ 
+//         color: hsl(228, 45%, 44%); 
+//         text-decoration: none;
+//     }
+// }
